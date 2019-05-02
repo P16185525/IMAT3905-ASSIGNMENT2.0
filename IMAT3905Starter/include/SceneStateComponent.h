@@ -16,5 +16,6 @@ public:
 private:
 
 	int m_sceneIndex;
+	int m_levelEditorSceneIndex;
 
 };

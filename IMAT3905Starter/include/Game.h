@@ -4,6 +4,7 @@
 
 class Model;
 class Scene;
+class LevelEditorScene;
 
 class Game
 {
@@ -13,6 +14,11 @@ public:
 
 	virtual void update(float dt) = 0;
 	virtual void render() = 0;
+
+	// ImGui
+	virtual void imguiInit() = 0;
+	virtual void imguiRender() = 0;
+	virtual void imguiShutdown() = 0;
 	
 	InputHandler* getInputHandler();
 
@@ -20,4 +26,5 @@ protected:
 	IEngineCore* m_engineInterfacePtr;
 	InputHandler* m_inputHandler;
 	Scene* m_scene;
+	LevelEditorScene* m_levelEditorScene;
 };

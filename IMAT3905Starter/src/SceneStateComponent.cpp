@@ -4,8 +4,11 @@
 
 SceneStateComponent::SceneStateComponent()
 {
-	m_sceneIndex = 0;
+	//m_sceneIndex = 0;
+
+	m_levelEditorSceneIndex = 0;
 }
+
 SceneStateComponent::~SceneStateComponent()
 {
 
@@ -25,14 +28,19 @@ void SceneStateComponent::OnMessage(const std::string msg)
 	{
 		SetSceneIndex(1);
 	}
+
 }
 
 int SceneStateComponent::GetSceneIndex()
 {
-	return m_sceneIndex;
+	//return m_sceneIndex;
+
+	return m_levelEditorSceneIndex;
 }
 void SceneStateComponent::SetSceneIndex(int newSceneIndex)
 {
-	m_sceneIndex = newSceneIndex;
+	//m_sceneIndex = newSceneIndex;
+
+	m_levelEditorSceneIndex = newSceneIndex;
 }
 

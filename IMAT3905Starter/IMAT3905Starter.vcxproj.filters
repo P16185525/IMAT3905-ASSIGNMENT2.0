@@ -75,23 +75,23 @@
     <ClCompile Include="src\SceneStateComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\imgui.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\imgui_demo.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\imgui_draw.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\imgui_glfw.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\imgui_impl_glfw_gl3.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\LevelEditorScene.cpp">
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\LevelEditorScene.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui_demo.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui_draw.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui_glfw.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui_impl_glfw_gl3.cpp">
+      <Filter>Source Files\imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,28 +161,28 @@
     <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\LevelEditorScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\imconfig.h">
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imconfig.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="include\imgui.h">
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imgui.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="include\imgui_glfw.h">
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imgui_glfw.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="include\imgui_impl_glfw_gl3.h">
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imgui_impl_glfw_gl3.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="include\imgui_internal.h">
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imgui_internal.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="include\stb_rect_pack.h">
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\stb_rect_pack.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="include\stb_textedit.h">
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\stb_textedit.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="include\stb_truetype.h">
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\stb_truetype.h">
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
   </ItemGroup>

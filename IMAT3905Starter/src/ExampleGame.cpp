@@ -2,6 +2,7 @@
 
 #include "ModelManager.h"
 #include "Scene.h"
+#include "LevelEditorScene.h"
 
 //needed for test code
 #include "GameObject.h"
@@ -24,6 +25,7 @@ ExampleGame::ExampleGame(IEngineCore* engine) : Game(engine)
 
 void ExampleGame::update(float dt) 
 {
+	/*
 	int desiredSceneIndex = m_scene->getPlayer()->getComponent<SceneStateComponent>()->GetSceneIndex();
 
 	if (desiredSceneIndex != m_sceneIndex)
@@ -35,16 +37,34 @@ void ExampleGame::update(float dt)
 		m_scene = new Scene(m_levelNames[m_sceneIndex], m_theModelManager, m_engineInterfacePtr);
 		m_inputHandler = new InputHandler(m_scene->getPlayer());  // or have a set function perhaps better then a new instance!
 	}
+	*/
+	
+	int desiredSceneIndex = m_levelEditorScene->getPlayer()->getComponent<SceneStateComponent>()->GetSceneIndex();
+
+	if (desiredSceneIndex != m_levelEditorSceneIndex)
+	{
+		delete m_levelEditorScene;
+
+		m_levelEditorSceneIndex = desiredSceneIndex;
+
+		m_levelEditorScene = new LevelEditorScene(m_levelNames[m_sceneIndex], m_theModelManager, m_engineInterfacePtr);
+		m_inputHandler = new InputHandler(m_levelEditorScene->getPlayer()); 
+	}
+	
 }
 void ExampleGame::render() 
 {
-	m_scene->render(m_engineInterfacePtr);
+	//m_scene->render(m_engineInterfacePtr);  // Renders game
+
+	m_levelEditorScene->render(m_engineInterfacePtr);  // Renders the level editor
 
 	double frameDuration = m_engineInterfacePtr->getFrameDuration();
 
 	if (frameDuration > 0)
 	{
-		glm::vec3 eulerAngles = m_scene->getPlayer()->getEulerAngles();
+		//glm::vec3 eulerAngles = m_scene->getPlayer()->getEulerAngles();
+
+		glm::vec3 eulerAngles = m_levelEditorScene->getPlayer()->getEulerAngles();
 
 		// convert to deg
 		eulerAngles.x = glm::degrees(eulerAngles.x);
@@ -66,7 +86,23 @@ void ExampleGame::render()
 void ExampleGame::Initialise()
 {
 	m_theModelManager = new ModelManager();	// singleton later...
-	m_scene = new Scene(m_levelNames[m_sceneIndex], m_theModelManager, m_engineInterfacePtr);
-	m_inputHandler = new InputHandler(m_scene->getPlayer());
+	//m_scene = new Scene(m_levelNames[m_sceneIndex], m_theModelManager, m_engineInterfacePtr);
+	//m_inputHandler = new InputHandler(m_scene->getPlayer());
+
+	m_levelEditorScene = new LevelEditorScene(m_levelNames[m_levelEditorSceneIndex], m_theModelManager, m_engineInterfacePtr);
+	m_inputHandler = new InputHandler(m_levelEditorScene->getPlayer());
+}
+
+void ExampleGame::imguiInit()
+{
+}
+
+void ExampleGame::imguiRender()
+{
+	m_levelEditorScene->imGUIRender();
+}
+
+void ExampleGame::imguiShutdown()
+{
 }
 

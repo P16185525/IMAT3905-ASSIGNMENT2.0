@@ -83,6 +83,19 @@ bool GLFW_EngineCore::initWindow(int width, int height, std::string windowName)
 
 bool GLFW_EngineCore::runEngine(Game* game)			// was Game&
 {
+	// Setup ImGui binding
+	ImGui_ImplGlfwGL3_Init(m_window, false);		// true for gwfw callbacks
+
+	// Load Fonts
+	//ImGuiIO& io = ImGui::GetIO();
+	//io.Fonts->AddFontDefault();
+	//io.Fonts->AddFontFromFileTTF("../../extra_fonts/Cousine-Regular.ttf", 15.0f);
+	//io.Fonts->AddFontFromFileTTF("../../extra_fonts/DroidSans.ttf", 16.0f);
+	//io.Fonts->AddFontFromFileTTF("../../extra_fonts/ProggyClean.ttf", 13.0f);
+	//io.Fonts->AddFontFromFileTTF("../../extra_fonts/ProggyTiny.ttf", 10.0f);
+	//io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\ArialUni.ttf", 18.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
+
+
 	// for this example just give the game direct access to the engine
 	// there are other ways this could be handled
 	// game.m_engineInterfacePtr = this;
@@ -107,6 +120,8 @@ bool GLFW_EngineCore::runEngine(Game* game)			// was Game&
 		game->update(0.1f); // update game logic
 		game->render(); // prepare game to send info to the renderer in engine core
 
+		game->imguiRender();
+
 		// swap buffers
 		glfwSwapBuffers(m_window);
 		glfwPollEvents();
@@ -121,6 +136,10 @@ bool GLFW_EngineCore::runEngine(Game* game)			// was Game&
 
 		currentFrame = (currentFrame + 1) % m_framesToMonitor;
 	}
+
+	// Shut down and cleanup
+
+	ImGui_ImplGlfwGL3_Shutdown();
 
 	return true;
 }
@@ -246,6 +265,15 @@ void GLFW_EngineCore::keyCallbackEvent(GLFWwindow* window, int key, int scancode
 	{
 		glfwSetWindowShouldClose(window, true);
 	}
+
+	// Pass to ImGui
+	ImGui_ImplGlfwGL3_KeyCallback(window, key, scancode, action, mods);
+}
+
+void GLFW_EngineCore::charCallbackEvent(GLFWwindow * window, unsigned int codepoint)
+{
+	// Pass to ImGui
+	ImGui_ImplGlfwGL3_CharCallback(window, codepoint);
 }
 
 void GLFW_EngineCore::windowResizeCallbackEvent(GLFWwindow* window, int width, int height)
@@ -491,6 +519,9 @@ void GLFW_EngineCore::mouseMoveCallbackEvent(GLFWwindow* window, double xPos, do
 
 void GLFW_EngineCore::mouseButtonCallbackEvent(GLFWwindow* window, int button, int action, int mods)
 {
+
+	ImGui_ImplGlfwGL3_MouseButtonCallback(window, button, action, mods);
+
 	//const int GLFW_RELEASE = 0;
 	//const int GLFW_PRESS = 1;
 	//const int GLFW_MOUSE_BUTTON_LEFT = 0;

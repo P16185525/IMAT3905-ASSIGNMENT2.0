@@ -19,21 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui.cpp" />
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui_demo.cpp" />
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui_draw.cpp" />
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui_glfw.cpp" />
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\imgui_impl_glfw_gl3.cpp" />
+    <ClCompile Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\src\LevelEditorScene.cpp" />
     <ClCompile Include="src\BackgroundColourGameObject.cpp" />
     <ClCompile Include="src\ExampleGame.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GLAD\glad.c" />
     <ClCompile Include="src\GLFW_EngineCore.cpp" />
     <ClCompile Include="src\IMAT3905Starter.cpp" />
-    <ClCompile Include="src\imgui.cpp" />
-    <ClCompile Include="src\imgui_demo.cpp" />
-    <ClCompile Include="src\imgui_draw.cpp" />
-    <ClCompile Include="src\imgui_glfw.cpp" />
-    <ClCompile Include="src\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="src\InputCommand.cpp" />
     <ClCompile Include="src\InputHandler.cpp" />
     <ClCompile Include="src\jsoncpp.cpp" />
-    <ClCompile Include="src\LevelEditorScene.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Mesh.cpp" />
     <ClCompile Include="src\Model.cpp" />
@@ -45,7 +45,15 @@
     <ClCompile Include="src\stb_image.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imconfig.h" />
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imgui.h" />
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imgui_glfw.h" />
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\imgui_internal.h" />
     <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\LevelEditorScene.h" />
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\stb_rect_pack.h" />
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\stb_textedit.h" />
+    <ClInclude Include="..\..\..\Pete%27s Starter\IMAT3905Starter\IMAT3905Starter\include\stb_truetype.h" />
     <ClInclude Include="include\BackgroundColourGameObject.h" />
     <ClInclude Include="include\CameraComponent.h" />
     <ClInclude Include="include\ColourComponent.h" />
@@ -56,11 +64,6 @@
     <ClInclude Include="include\GameObject.h" />
     <ClInclude Include="include\GLFW_EngineCore.h" />
     <ClInclude Include="include\IEngineCore.h" />
-    <ClInclude Include="include\imconfig.h" />
-    <ClInclude Include="include\imgui.h" />
-    <ClInclude Include="include\imgui_glfw.h" />
-    <ClInclude Include="include\imgui_impl_glfw_gl3.h" />
-    <ClInclude Include="include\imgui_internal.h" />
     <ClInclude Include="include\InputCommand.h" />
     <ClInclude Include="include\InputHandler.h" />
     <ClInclude Include="include\Mesh.h" />
@@ -71,9 +74,6 @@
     <ClInclude Include="include\Scene.h" />
     <ClInclude Include="include\SceneStateComponent.h" />
     <ClInclude Include="include\StaticEnvironmentObject.h" />
-    <ClInclude Include="include\stb_rect_pack.h" />
-    <ClInclude Include="include\stb_textedit.h" />
-    <ClInclude Include="include\stb_truetype.h" />
     <ClInclude Include="include\TransformComponent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -158,12 +158,11 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../bullet/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>assimp-vc140-d.lib;glfw3.lib;opengl32.lib;freetype281.lib;BulletSoftBody_vs2010_debug.lib;BulletDynamics_vs2010_debug.lib;BulletCollision_vs2010_debug.lib;LinearMath_vs2010_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>assimp-vc140-d.lib;glfw3.lib;opengl32.lib;freetype281.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/NODEFAULTLIB:MSVCRT.lib %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
