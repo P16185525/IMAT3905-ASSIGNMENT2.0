@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include "btBulletCollisionCommon.h"
 #include <unordered_map>
 #include <typeindex>
 
